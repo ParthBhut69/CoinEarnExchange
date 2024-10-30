@@ -1,0 +1,64 @@
+/* Hero.css */
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.relative {
+    position: relative;
+}
+
+.floating {
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes coinAnimation {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(20px, -20px);
+    }
+    50% {
+        transform: translate(-20px, -20px);
+    }
+    75% {
+        transform: translate(20px, 20px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.coin {
+    position: absolute;
+    width: 5vw; /* Responsive size */
+    height: 5vw; /* Maintain aspect ratio */
+    max-width: 70px; /* Max size */
+    max-height: 70px; /* Max size */
+    animation: coinAnimation 6s ease-in-out infinite;
+    pointer-events: none; /* Prevent interference with mouse events */
+}
+
+@media (max-width: 768px) {
+    .animate_right {
+        display: block; /* Show image on mobile */
+        width: 100%; /* Full width */
+        margin-top: 20px; /* Space below text */
+    }
+
+    .coin {
+        width: 10vw; /* Smaller coins on mobile */
+        height: 10vw; /* Maintain aspect ratio */
+        max-width: 30px; /* Set a max size for mobile */
+        max-height: 30px; /* Set a max size for mobile */
+    }
+}

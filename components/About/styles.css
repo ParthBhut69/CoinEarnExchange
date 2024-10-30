@@ -1,0 +1,131 @@
+:root {
+  --color-primary: #003366; /* Navy */
+  --color-secondary: #007BFF; /* Bright Blue */
+  --color-tertiary: #f5f5f5; /* Light Grey */
+  --color-text: #333; /* Dark Text */
+  --color-white: #fff;
+  --color-success: #28a745; /* Green */
+  --color-danger: #dc3545; /* Red */
+  --color-warning: #ffc107; /* Yellow */
+  --gradient-bg: linear-gradient(135deg, #003366, #007BFF);
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--color-tertiary);
+  color: var(--color-text);
+  margin: 0;
+  padding: 20px;
+}
+
+.cd-timeline {
+  position: relative;
+  padding: 40px 0;
+}
+
+.cd-timeline__block {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 60px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.cd-timeline__block:hover {
+  transform: scale(1.02);
+}
+
+.cd-timeline__img {
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.cd-timeline__img img {
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cd-timeline__content {
+  background: var(--color-white);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: background 0.3s ease;
+  border-left: 4px solid var(--color-secondary);
+}
+.cd-timeline__block {
+  opacity: 0;
+  transform: translateY(20px); /* Initial position */
+  transition: opacity 0.6s ease, transform 0.6s ease; /* Smooth transition */
+}
+
+.cd-timeline__content:hover {
+  background: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.cd-timeline__content h2 {
+  margin-top: 0;
+}
+
+.cd-timeline__img--hidden {
+  visibility: hidden;
+}
+
+.cd-timeline__content--hidden {
+  visibility: hidden;
+}
+
+.cd-timeline__img--bounce-in {
+  animation: bounce-in 0.6s forwards;
+}
+
+.cd-timeline__content--bounce-in {
+  animation: bounce-in-content 0.6s forwards;
+}
+
+.cd-timeline__date {
+  display: block;
+  margin-top: 10px;
+  color: var(--color-primary);
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce-in-content {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.cd-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20px; /* Adjust to center the line */
+  width: 4px;
+  height: 100%;
+  background: var(--gradient-bg);
+  z-index: -1;
+}
