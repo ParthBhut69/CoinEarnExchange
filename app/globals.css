@@ -34,11 +34,27 @@
   }
 }
 
-@media (max-width: 1280px) {
-  .navbar {
-    @apply max-h-[400px] overflow-y-scroll;
+@media (max-width: 640px) {
+  /* Mobile styles */
+  .testimonial {
+    @apply p-4;
   }
 }
+
+@media (min-width: 640px) {
+  /* Tablet styles */
+  .testimonial {
+    @apply p-6;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Desktop styles */
+  .testimonial {
+    @apply p-8;
+  }
+}
+
 
 @layer utilities {
   /* Chrome, Safari and Opera */
@@ -56,6 +72,7 @@
       brightness(100%) contrast(105%);
   }
 }
+
 
 .blog-details-docs {
   @apply rounded-lg border border-white p-7.5 shadow-solid-3 transition-all dark:border-strokedark  dark:bg-blacksection xl:p-12.5;

@@ -3,28 +3,25 @@ import { FeatureTab } from "@/types/featureTab";
 const featuresTabData: FeatureTab[] = [
   {
     id: "tabOne",
-    title: "Solid Has Neat & Clean User Interface.",
-    desc1: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies lacus non fermentum ultrices. Fusce consectetur le.`,
-    desc2: `    Nam id eleifend dui, id iaculis purus. Etiam lobortis neque nec finibus sagittis. Nulla ligula nunc egestas ut.`,
-    image: "/images/features/features-light-01.png",
-    imageDark: "/images/features/features-dark-01.svg",
+    title: "Earning Opportunities for Traders",
+    desc1: `Profit from AI Trading: Traders can deposit funds, select their risk profile, and let the AI trade automatically. The profits will be transferred back in either USDT or CEE  tokens.`,
+    desc2: `High-Yield Strategies: AI-based strategies, like arbitrage and momentum trading, will offer high-profit potential with optimized risk management.`,
+    desc3: "",
+    image: "/images/features/ai.jpg",
+    imageDark: "/images/features/ai.jpg",
   },
   {
     id: "tabTwo",
-    title: "Ready to Use Pages You Need for a SaaS Business.",
-    desc1: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies lacus non fermentum ultrices. Fusce consectetur le.`,
-    desc2: `    Nam id eleifend dui, id iaculis purus. Etiam lobortis neque nec finibus sagittis. Nulla ligula nunc egestas ut.`,
-    image: "/images/features/features-light-01.png",
-    imageDark: "/images/features/features-dark-01.svg",
+    title: "Earning Opportunities for Investors",
+    desc1: `Investors who stake their CEE  tokens will earn interest on their staked amounts, paid out in platform tokens or USDT.`,
+    desc2: `Investors who stake their tokens can choose to "lease" additional capital to the platform's vetted traders. The profits earned from trading with this capital will be shared between the investor and the trader.`,
+    desc3: 'Long-term investors can vote on platform decisions, from algorithm updates to fee structures, through governance staking.',
+    image: "/images/features/trade.avif",
+    imageDark: "/images/features/trade.avif",
   },
-  {
-    id: "tabThree",
-    title: "Functional Blog, DB, Auth and Many More",
-    desc1: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies lacus non fermentum ultrices. Fusce consectetur le.`,
-    desc2: `Nam id eleifend dui, id iaculis purus. Etiam lobortis neque nec finibus sagittis. Nulla ligula nunc egestas ut.`,
-    image: "/images/features/features-light-01.png",
-    imageDark: "/images/features/features-dark-01.svg",
-  },
+ 
+  
+
 ];
 
 export default featuresTabData;

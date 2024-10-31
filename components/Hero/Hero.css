@@ -1,5 +1,14 @@
 /* Hero.css */
+.hero-background {
+    background-image: url('/images/bg.jpg'); /* Replace with your image path */
+    background-size: cover; /* Makes sure the image covers the section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    position: relative; /* Ensures positioning context for child elements */
+  }
+  
 
+  
 @keyframes float {
     0% {
         transform: translateY(0);
@@ -20,12 +29,19 @@
     animation: float 2s ease-in-out infinite;
 }
 
+@media (max-width: 768px) {
+    .flex-col-reverse {
+      flex-direction: column; /* Stack elements in reverse order on mobile */
+    }
+  }
+  
+
 @keyframes coinAnimation {
     0% {
         transform: translate(0, 0);
     }
     25% {
-        transform: translate(20px, -20px);
+        transform: translate(10px, -10px);
     }
     50% {
         transform: translate(-20px, -20px);
@@ -62,3 +78,28 @@
         max-height: 30px; /* Set a max size for mobile */
     }
 }
+
+
+.gradient-border {
+    position: relative;
+    padding: 20px; /* Adjust padding as needed */
+    background-color: #fff; /* Background color of the box */
+    border-radius: 10px; /* Round corners */
+    overflow: hidden; /* Prevents overflow of pseudo-element */
+  }
+  
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #00ff99, #00cc66, #00994d); /* Adjust colors */
+    z-index: -1; /* Position it behind the box */
+    border-radius: 10px; /* Match border radius of the box */
+    filter: blur(8px); /* Optional: adds a nice blur effect */
+    transform: scale(1.1); /* Optional: slightly scale for a thicker border */
+  }
+  
+  

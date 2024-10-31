@@ -1,131 +1,103 @@
-:root {
-  --color-primary: #003366; /* Navy */
-  --color-secondary: #007BFF; /* Bright Blue */
-  --color-tertiary: #f5f5f5; /* Light Grey */
-  --color-text: #333; /* Dark Text */
-  --color-white: #fff;
-  --color-success: #28a745; /* Green */
-  --color-danger: #dc3545; /* Red */
-  --color-warning: #ffc107; /* Yellow */
-  --gradient-bg: linear-gradient(135deg, #003366, #007BFF);
-}
-
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: var(--color-tertiary);
-  color: var(--color-text);
+  font-family: Arial, sans-serif;
+  background-color: #eaeef1; /* Softer background */
   margin: 0;
-  padding: 20px;
+  padding: 0;
 }
 
-.cd-timeline {
+.timeline {
   position: relative;
-  padding: 40px 0;
-}
-
-.cd-timeline__block {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 60px;
-  position: relative;
-  transition: transform 0.3s ease;
-}
-
-.cd-timeline__block:hover {
-  transform: scale(1.02);
-}
-
-.cd-timeline__img {
-  margin-right: 20px;
-  flex-shrink: 0;
-}
-
-.cd-timeline__img img {
-  border-radius: 50%;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.cd-timeline__content {
-  background: var(--color-white);
-  padding: 20px;
+  padding: 2rem 0;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #ffffff; /* White background for contrast */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.timeline h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333; /* Dark text for better readability */
+}
+
+.timeline h2 {
+  text-align: center;
+  font-size: 1.25rem;
+  color: #777; /* Lighter grey for subtitles */
+}
+
+.timeline ul {
+  list-style-type: none;
+  padding: 0;
   position: relative;
-  transition: background 0.3s ease;
-  border-left: 4px solid var(--color-secondary);
-}
-.cd-timeline__block {
-  opacity: 0;
-  transform: translateY(20px); /* Initial position */
-  transition: opacity 0.6s ease, transform 0.6s ease; /* Smooth transition */
 }
 
-.cd-timeline__content:hover {
-  background: var(--color-secondary);
-  color: var(--color-white);
+.timeline li {
+  position: relative;
+  padding: 1rem 1.5rem;
+  border-left: 3px solid #007bff; /* Blue line for timeline */
+  margin-left: 2rem;
+  transition: all 0.3s ease;
+  background-color: #f0f8ff; /* Light blue background for event items */
 }
 
-.cd-timeline__content h2 {
-  margin-top: 0;
+.event-item {
+  opacity: 0; /* Start invisible */
+  transform: translateY(20px); /* Start slightly below */
 }
 
-.cd-timeline__img--hidden {
-  visibility: hidden;
+.event-item.inView {
+  opacity: 1; /* Become visible */
+  transform: translateY(0); /* Move to original position */
 }
 
-.cd-timeline__content--hidden {
-  visibility: hidden;
+.event-content {
+  background-color: #e7f1ff; /* Light background for event */
+  border-radius: 5px;
+  padding: 1rem;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+.description {
+  list-style-type: disc; /* Use disc for bullet points */
+  margin-left: 20px; /* Indent the bullet points */
 }
 
-.cd-timeline__img--bounce-in {
-  animation: bounce-in 0.6s forwards;
+.bullet-point {
+  margin-bottom: 5px; /* Space between bullet points */
 }
 
-.cd-timeline__content--bounce-in {
-  animation: bounce-in-content 0.6s forwards;
-}
-
-.cd-timeline__date {
+.event-content time {
   display: block;
-  margin-top: 10px;
-  color: var(--color-primary);
+  font-weight: bold;
+  color: #007bff; /* Match with timeline color */
 }
 
-@keyframes bounce-in {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
+.event-content .title {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: #0056b3; /* Slightly darker blue for titles */
 }
 
-@keyframes bounce-in-content {
-  0% {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  60% {
-    opacity: 1;
-    transform: translateX(10px);
-  }
-  100% {
-    transform: translateX(0);
-  }
+.event-content .company {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
 }
 
-.cd-timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 20px; /* Adjust to center the line */
-  width: 4px;
-  height: 100%;
-  background: var(--gradient-bg);
-  z-index: -1;
+.event-content .description {
+  font-size: 0.85rem;
+  color: #333; /* Darker text for readability */
+}
+
+/* Optional: Responsive design */
+@media (max-width: 768px) {
+  .timeline {
+    padding: 1rem;
+  }
+
+  .timeline li {
+    margin-left: 1rem; /* Adjust margin for smaller screens */
+  }
 }

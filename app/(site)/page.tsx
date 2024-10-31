@@ -1,3 +1,5 @@
+import React from "react";
+import ReactDOM from "react-dom";
 import { Metadata } from "next";
 import Hero from "@/components/Hero";
 import Brands from "@/components/Brands";
@@ -11,6 +13,7 @@ import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Blog from "@/components/Blog";
 import Testimonial from "@/components/Testimonial";
+
 
 
 export const metadata: Metadata = {
@@ -28,14 +31,15 @@ export default function Home() {
       <About />
       <FeaturesTab />
       <FunFact />
-      <Integration />
+      <Brands />
       <CTA />
       <FAQ />
       <Testimonial />
       {/* <Pricing /> */}
       <Contact />
       <Blog />
-      <Brands />
+      <Integration />
+      
     </main>
   );
 }

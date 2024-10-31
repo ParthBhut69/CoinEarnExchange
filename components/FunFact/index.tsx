@@ -14,14 +14,14 @@ const FunFact = () => {
             height={384}
             src="/images/shape/profit.png"
             alt="Man"
-            className="absolute -left-15 -top-25 -z-1 lg:left-0 floating" // Added floating class
+            className="absolute -left-15 -top-25 -z-1 lg:left-0 floating"
           />
           <Image
-            width={132}
+            width={250}
             height={132}
-            src="/images/shape/shape-05.png"
+            src="/images/shape/coin.png"
             alt="Doodle"
-            className="absolute bottom-0 right-0 -z-1"
+            className="absolute bottom-0 right-0 -z-1 floating-coin" // Added floating-coin class
           />
 
           <Image
@@ -65,7 +65,6 @@ const FunFact = () => {
           </motion.div>
 
           <div className="flex flex-wrap justify-center gap-8 lg:gap-42.5">
-            {/* Repeat for other stats */}
             <motion.div className="animate_top text-center">
               <h3 className="mb-2.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">500K</h3>
               <p className="text-lg lg:text-para2">World Wide Clients</p>
@@ -81,6 +80,23 @@ const FunFact = () => {
           </div>
         </div>
       </section>
+      <style jsx>{`
+        @keyframes float {
+          0% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+          100% {
+            transform: translateY(0);
+          }
+        }
+
+        .floating-coin {
+          animation: float 3s ease-in-out infinite;
+        }
+      `}</style>
       {/* <!-- ===== Funfact End ===== --> */}
     </>
   );

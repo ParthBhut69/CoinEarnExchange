@@ -1,0 +1,53 @@
+/* Add this CSS to your existing styles */
+.neon-border {
+    position: relative;
+    padding: 20px; /* Adjust padding to create space for the border */
+    border-radius: 8px; /* Match the border radius of the box */
+    overflow: hidden; /* Prevents overflow of pseudo-element */
+  }
+  
+  .neon-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #8e2de2, #4a00e0); /* Blue to Purple gradient */
+    z-index: -1; /* Position it behind the box */
+    border-radius: 8px; /* Match border radius of the box */
+    filter: blur(10px); /* Adds a blur effect */
+    transform: scale(1.1); /* Slightly scale for a thicker border */
+  }
+
+  
+  /* Background Gradient */
+.feature-background {
+    background: linear-gradient(135deg, #4a00e0, #8e2de2);
+    position: relative;
+    z-index: 0; /* Ensure behind content */
+    padding: 20px; /* Optional */
+}
+
+/* Subtle Pattern Overlay */
+.pattern-overlay {
+    background-image: url('/images/pattern.png'); /* Subtle pattern */
+    opacity: 0.1; /* Make it subtle */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; /* Above gradient */
+}
+
+/* Optional: Animated Background */
+@keyframes backgroundAnimation {
+    0% { background-color: #4a00e0; }
+    50% { background-color: #8e2de2; }
+    100% { background-color: #4a00e0; }
+}
+
+.animated-background {
+    animation: backgroundAnimation 10s infinite alternate; /* Color cycling effect */
+}

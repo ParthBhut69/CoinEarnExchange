@@ -13,6 +13,8 @@ const nextConfig = {
       },
     ],
   },
+  //output: 'export', // Enable static export
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
