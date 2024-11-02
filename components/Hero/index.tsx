@@ -7,45 +7,52 @@ import { motion } from 'framer-motion';
 const Hero = () => {
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    // Handle email submission here if needed
   };
 
   const renderCoins = () => {
     const coins = [
-      "/images/coins/solana.png", // Solana
-      "/images/coins/bitcoin.png", // Bitcoin
-      "/images/coins/sand.png", // Sandcoin
-      "/images/coins/eth.png",
+      "/images/coins/solana.png",
+      "/images/coins/bitcoin.png",
+      "/images/coins/sol.png",
+      "/images/coins/eth.png", 
+      "/images/coins/bitcoinblk.png",
+      
+      
       // Add more coin images as needed
     ];
-
-    const coinPositions = [];
+  
+    const coinPositions: Array<[number, number]> = [];
     const radius = 60;
     const maxAttempts = 100;
-
-    return Array.from({ length: 10 }).map((_, index) => {
+  
+    return Array.from({ length: 12}).map((_, index) => {
       let coinSrc = coins[Math.floor(Math.random() * coins.length)];
-      let left, top;
-
+      
+      // Initialize left and top with default values
+      let left: number = 0; 
+      let top: number = 0;
+  
       for (let attempt = 0; attempt < maxAttempts; attempt++) {
         const angle = Math.random() * 2 * Math.PI;
         left = 50 + radius * Math.cos(angle);
         top = 50 + radius * Math.sin(angle);
-
+  
         const overlap = coinPositions.some(([posLeft, posTop]) => {
           const distance = Math.sqrt(
             Math.pow(left - posLeft, 2) + Math.pow(top - posTop, 2)
           );
           return distance < 50;
         });
-
+  
         if (!overlap) {
           coinPositions.push([left, top]);
           break;
         }
       }
-
+  
       return (
         <Image
           key={index}
@@ -56,14 +63,15 @@ const Hero = () => {
           height={40}
           style={{
             position: 'absolute',
-            left: `${left}%`,
-            top: `${top}%`,
+            left: `${left}%`, // Now this won't cause an error
+            top: `${top}%`,   // Now this won't cause an error
             animationDelay: `${Math.random() * 2}s`,
           }}
         />
       );
     });
   };
+  
 
   return (
     <section className="overflow-hidden pb-20 pt-35 md:pt-40 xl:pb-25 xl:pt-46 relative">
@@ -77,7 +85,7 @@ const Hero = () => {
       </div>
       <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0 relative z-10">
         <div className="flex flex-col-reverse lg:flex-row lg:items-center lg:gap-8 xl:gap-32.5">
-          <div className="md:w-1/2 flex flex-col items-center text-center"> {/* Centering */}
+          <div className="md:w-1/2 flex flex-col items-center text-center">
             <h1 className="mb-5 text-3xl font-bold text-black dark:text-white xl:text-hero">
               Empowering Trading{" "}
               <span className="relative inline-block before:absolute before:bottom-2.5 before:left-0 before:-z-1 before:h-3 before:w-full before:bg-titlebg dark:before:bg-titlebgdark">
@@ -89,7 +97,7 @@ const Hero = () => {
             </p>
             <div className="mt-10">
               <form onSubmit={handleSubmit}>
-                <div className="flex flex-wrap gap-5 justify-center"> {/* Center buttons */}
+                <div className="flex flex-wrap gap-5 justify-center">
                   <button
                     aria-label="get started button"
                     className="flex rounded-full bg-black px-7.5 py-2.5 text-white duration-300 ease-in-out hover:bg-blackho dark:bg-btndark dark:hover:bg-blackho"

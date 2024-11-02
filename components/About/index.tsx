@@ -8,12 +8,17 @@ const events = [
   {
     phase: "Phase 1",
     title: "Platform Development",
-    description: ["1. Build Core AI trading algorithms, Solana sniping bots, and predictive",]
+    description: ["1. Build Core AI trading algorithms, Solana sniping bots, and predictive engine.",
+                  "2. Token creation and ICO/IEO for early investors.",
+                  "3. Launch staking and deposit systems for initial traders."
+    ]
   },
   {
     phase: "Phase 2",
     title: "AI Refinement & Staking Program",
-    description: "First model of an atom proposed by Niels Bohr.",
+    description: ["1. Roll out staking opportunities with fundleasing options for traders.",
+                  "2. Improve the AI trading algorithm based on live market data."
+    ]
   },
   {
     phase: "Phase 3",
@@ -36,10 +41,9 @@ const events = [
     ]
   },
 ];
-
 // Event Item Component
-const EventItem = ({ index, phase, title, description }) => {
-  const timeItem = useRef();
+const EventItem = ({ index, phase, title, description, className }) => {
+  const timeItem = useRef<HTMLLIElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   const checkVisibility = (el) => {
@@ -72,7 +76,7 @@ const EventItem = ({ index, phase, title, description }) => {
   }, []);
 
   return (
-    <li ref={timeItem} className={`event-item ${isVisible ? "inView" : ""} ${index % 2 === 0 ? 'left' : 'right'}`}>
+    <li ref={timeItem} className={`event-item ${className} ${isVisible ? "inView" : ""} ${index % 2 === 0 ? 'left' : 'right'}`}>
       <div className="event-content">
         <div className="circle"></div>
         <div className="content">
@@ -110,6 +114,7 @@ const Timeline = () => {
             phase={item.phase}
             title={item.title}
             description={item.description}
+            className={`phase${index + 1}`}
           />
         ))}
       </ul>
@@ -117,4 +122,5 @@ const Timeline = () => {
   );
 };
 
+// Export Timeline
 export default Timeline;

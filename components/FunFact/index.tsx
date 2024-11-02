@@ -9,44 +9,39 @@ const FunFact = () => {
       {/* <!-- ===== Funfact Start ===== --> */}
       <section className="px-4 py-20 md:px-8 lg:py-22.5 2xl:px-0">
         <div className="relative z-1 mx-auto max-w-c-1390 rounded-lg bg-gradient-to-t from-[#F8F9FF] to-[#DEE7FF] py-22.5 dark:bg-blacksection dark:bg-gradient-to-t dark:from-transparent dark:to-transparent dark:stroke-strokedark xl:py-27.5">
+          
           <Image
             width={335}
             height={384}
             src="/images/shape/profit.png"
-            alt="Man"
+            alt="Profit Illustration"
             className="absolute -left-15 -top-25 -z-1 lg:left-0 floating"
           />
           <Image
             width={250}
             height={132}
             src="/images/shape/coin.png"
-            alt="Doodle"
-            className="absolute bottom-0 right-0 -z-1 floating-coin" // Added floating-coin class
+            alt="Coin Illustration"
+            className="absolute bottom-0 right-0 -z-1 floating-coin"
           />
 
           <Image
             fill
             src="/images/shape/shape-dotted-light-02.svg"
-            alt="Dotted"
+            alt="Dotted Background"
             className="absolute left-0 top-0 -z-1 dark:hidden"
           />
           <Image
             fill
             src="/images/shape/shape-dotted-dark-02.svg"
-            alt="Dotted"
+            alt="Dotted Background Dark"
             className="absolute left-0 top-0 -z-1 hidden dark:block"
           />
 
           <motion.div
             variants={{
-              hidden: {
-                opacity: 0,
-                y: -20,
-              },
-              visible: {
-                opacity: 1,
-                y: 0,
-              },
+              hidden: { opacity: 0, y: -20 },
+              visible: { opacity: 1, y: 0 },
             }}
             initial="hidden"
             whileInView="visible"
@@ -65,36 +60,56 @@ const FunFact = () => {
           </motion.div>
 
           <div className="flex flex-wrap justify-center gap-8 lg:gap-42.5">
-            <motion.div className="animate_top text-center">
-              <h3 className="mb-2.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">500K</h3>
-              <p className="text-lg lg:text-para2">World Wide Clients</p>
-            </motion.div>
-            <motion.div className="animate_top text-center">
-              <h3 className="mb-2.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">1M+</h3>
-              <p className="text-lg lg:text-para2">Downloads</p>
-            </motion.div>
-            <motion.div className="animate_top text-center">
-              <h3 className="mb-2.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">865</h3>
-              <p className="text-lg lg:text-para2">Winning Award</p>
-            </motion.div>
+            {["500K", "1M+", "865"].map((fact, index) => (
+              <motion.div
+                key={index}
+                className="animate_top text-center w-full md:w-1/3" // Full width on mobile, 1/3 on medium screens
+              >
+                <h3 className="mb-2.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
+                  {fact}
+                </h3>
+                <p className="text-lg lg:text-para2">
+                  {index === 0 ? "World Wide Clients" : index === 1 ? "Downloads" : "Winning Award"}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
+
       <style jsx>{`
         @keyframes float {
-          0% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-          100% {
-            transform: translateY(0);
-          }
+          0% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+          100% { transform: translateY(0); }
         }
 
         .floating-coin {
           animation: float 3s ease-in-out infinite;
+        }
+
+        @media (max-width: 768px) {
+          .floating-coin {
+            width: 100%; /* Ensure it takes the full width */
+          }
+
+          .funfact-container {
+            padding: 20px 10px; /* Add padding for better spacing */
+          }
+
+          .funfact-title {
+            font-size: 1.8rem; /* Adjust font size for smaller screens */
+          }
+
+          .funfact-description {
+            font-size: 1rem; /* Smaller font size for description */
+            line-height: 1.5; /* Improved line height */
+          }
+
+          .fact-item {
+            width: 100%; /* Full width on mobile */
+            margin-bottom: 20px; /* Space between items */
+          }
         }
       `}</style>
       {/* <!-- ===== Funfact End ===== --> */}

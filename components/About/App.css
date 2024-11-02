@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(to right, #3da3d5, #78c2d4);
+    background: linear-gradient(to right, #4e54c8, #8f94fb); /* Blue to Purple gradient */
     font-family: "Montserrat", sans-serif;
     color: #333;
     margin: 0;
@@ -10,6 +10,14 @@ body {
     padding: 5em 0;
 }
 
+.subtitle {
+    color: black; /* Set subtitle color to black */
+    font-size: 1.2em; /* Optional: Adjust font size */
+    text-align: center; /* Optional: Center align the text */
+    margin-top: 0.5em; /* Optional: Add margin for spacing */
+}
+
+
 h2, h4 {
     text-align: center;
     color: #ffffff;
@@ -19,11 +27,32 @@ h2, h4 {
     list-style: none;
     margin: 2em 0;
     position: relative;
-    padding: 1em;
-    background: rgba(255, 255, 255, 0.8);
+    padding: 1.5em;
+    background: rgba(255, 255, 255, 0.9); /* Slightly opaque white */
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s;
+}
+
+/* Gradient backgrounds for each phase */
+.event-item.phase1 {
+    background: linear-gradient(to right, #4e54c8, #8f94fb);
+}
+
+.event-item.phase2 {
+    background: linear-gradient(to right, #6a5acd, #b3cde0); /* A lighter blue-purple */
+}
+
+.event-item.phase3 {
+    background: linear-gradient(to right, #4f83c2, #b7c9e6); /* Softer blue */
+}
+
+.event-item.phase4 {
+    background: linear-gradient(to right, #8f94fb, #d0e1f9); /* Light purple to light blue */
+}
+
+.event-item.phase5 {
+    background: linear-gradient(to right, #4e54c8, #b3cde0); /* Similar to phase 2 */
 }
 
 .event-item.inView {
@@ -34,13 +63,14 @@ h2, h4 {
 .phase {
     font-size: 1.5em;
     font-weight: bold;
-    color: #06d6a0;
+    color: #4e54c8; /* Blue color */
 }
 
 .title {
     font-size: 2em;
     margin: 0.5em 0;
     text-transform: uppercase;
+    color: #8f94fb; /* Light purple color */
 }
 
 .description {
@@ -62,7 +92,7 @@ h2, h4 {
     top: 0.6em;
     width: 0.5em;
     height: 0.5em;
-    background: #06d6a0;
+    background: #8f94fb; /* Light purple */
     border-radius: 50%;
 }
 
@@ -78,4 +108,37 @@ h2, h4 {
     .title {
         font-size: 1.5em;
     }
+}
+
+/* Additional styles for the roadmap effect */
+.timeline ul {
+    position: relative;
+    padding: 0;
+}
+
+.timeline ul::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: #4e54c8; /* Blue color for the timeline line */
+    z-index: 0;
+}
+
+.event-item {
+    margin-left: calc(50% + 20px); /* Offset for left items */
+}
+
+.event-item.right {
+    margin-left: calc(50% - 20px); /* Offset for right items */
+}
+
+.event-item.left {
+    transform: translateX(-100%);
+}
+
+.event-item.right {
+    transform: translateX(100%);
 }

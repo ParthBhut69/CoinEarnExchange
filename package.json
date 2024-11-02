@@ -1,12 +1,3 @@
-
-{
-  "homepage": "http://ParthBhut69.github.io/CoinEarnExchange",
-  "scripts": {
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
-}
-}
-
 {
   "name": "solid-nextjs",
   "version": "0.2.0",
@@ -15,16 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "format": "prettier --write ."
+    "lint": "next lint"
   },
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.5.4",
+    "@next/bundle-analyzer": "^15.0.2",
     "@types/bcrypt": "^5.0.1",
     "@types/node": "^20.8.9",
     "@types/react": "^18.2.32",
     "@types/react-dom": "^18.2.14",
     "autoprefixer": "^10.4.16",
+    "build": "^0.1.4",
     "canvas-confetti": "^1.9.3",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
@@ -36,6 +28,7 @@
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.6",
     "react": "^18.2.0",
+    "react-confetti": "^6.1.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
     "react-timeline": "^0.0.9",
@@ -54,13 +47,7 @@
   },
   "description": "Solid is a free Next.js template specifically crafted for startups, SaaS, and software websites. It provides an extensive array of necessary sections, elements, and pages required to build a fully-equipped website for any SaaS, software, or startup site. Comes with all cutting edge React and Next.js features - **Built with Next.js 13, React 18 and TypeScript.**",
   "main": "next.config.js",
-  "keywords": [
-    "nextjs",
-    "template",
-    "startup",
-    "saas",
-    "react"
-  ],
-  "author": "Your Name",
-  "license": "MIT"
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
