@@ -153,11 +153,7 @@ const Hero = () => {
 
       {/* Particles Component */}
       <div className="particles-background absolute top-0 left-0 w-full h-full">
-        <Particles 
-          id="tsparticles" 
-          init={particlesInit} 
-          options={particlesOptions} 
-        />
+
       </div>
 
       {/* Background Shapes */}

@@ -7,6 +7,7 @@ const BlogData: Blog[] = [
     title: "With Help of CoinDesk get latest updates",
     metadata:
       "CoinDesk is one of the most popular and reliable sources of cryptocurrency news.",
+    slug : "https://www.coindesk.com"
       
   },
   {
@@ -15,6 +16,7 @@ const BlogData: Blog[] = [
     title: "The Future of Cryptocurrency: What to Expect in 2025",
     metadata:
       "Explore the emerging trends and predictions for the cryptocurrency market in 2025. Learn about new blockchain innovations, upcoming regulations, and potential investment opportunities.",
+    slug : " "
   },
   {
     _id: 2,

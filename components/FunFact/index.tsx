@@ -57,23 +57,45 @@ const FunFact = () => {
             </p>
           </motion.div>
           
-
+          
           <div className="flex flex-wrap justify-center gap-8 lg:gap-42.5">
-            {["500K", "1M+", "865"].map((fact, index) => (
-              <motion.div
-                key={index}
-                className="animate_top text-center w-full md:w-1/3" // Full width on mobile, 1/3 on medium screens
-              >  
-                <h3 className="mb-2.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
-                  {fact}
-                </h3> 
-                
-                <p className="text-lg lg:text-para2">
-                  {index === 0 ? "World Wide Clients" : index === 1 ? "Downloads" : "Winning Award"}
-                </p><br></br><br></br>
-              </motion.div>
-            ))}
-          </div>
+  {/* First fact */}
+  <motion.div
+    key={0}
+    className="animate_top text-center w-full md:w-1/3"
+  >  
+    <h3 className="mb-2.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
+      500K
+    </h3> 
+    <p className="text-lg lg:text-para2">World Wide Clients</p><br></br><br></br>
+  </motion.div>
+
+  {/* Middle image */}
+            
+
+  {/* Second fact */}
+  <motion.div
+    key={1}
+    className="animate_top text-center w-full md:w-1/3"
+  >  
+    <h3 className="mb-2.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
+      1M+
+    </h3> 
+    <p className="text-lg lg:text-para2">Downloads</p><br></br><br></br>
+  </motion.div>
+
+  {/* Third fact */}
+  <motion.div
+    key={2}
+    className="animate_top text-center w-full md:w-1/3"
+  >  
+    <h3 className="mb-2.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
+      865
+    </h3> 
+    <p className="text-lg lg:text-para2">Winning Award</p><br></br><br></br>
+  </motion.div>
+</div>
+
         </div>
       </section>
 

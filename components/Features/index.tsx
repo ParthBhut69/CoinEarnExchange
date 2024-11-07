@@ -52,7 +52,51 @@ const Feature = () => {
               <SingleFeature feature={feature} key={key} />
             ))}
           </div>
+
+          {/* New Image (Added at the end) with Floating Animation and Glow Effect */}
+          <div className="mt-12 relative z-10">
+            <div className="w-full flex justify-center">
+              <Image
+                src="/images/shape/comptrade.gif" // Change this to your new image path
+                alt="New Image"
+                width={500}
+                height={300}
+                className="w-full h-auto md:w-1/2 lg:w-2/3 xl:w-1/3 animate-float glow-effect"
+              />
+            </div>
+          </div>
+
         </div>
+
+        {/* Floating Animation and Glow Effect CSS */}
+        <style jsx>{`
+          @keyframes float {
+            0% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(-15px); /* Adjust the floating height */
+            }
+            100% {
+              transform: translateY(0);
+            }
+          }
+
+          .animate-float {
+            animation: float 3s ease-in-out infinite;
+          }
+
+          .glow-effect {
+            /* Stronger Glow Effect */
+            box-shadow: 0 0 20px rgba(0, 255, 255, 1), 0 0 40px rgba(0, 255, 255, 0.8), 0 0 60px rgba(0, 255, 255, 0.6);
+            transition: all 0.3s ease-in-out;
+          }
+
+          .glow-effect:hover {
+            /* Intensified Glow on Hover */
+            box-shadow: 0 0 40px rgba(0, 255, 255, 1), 0 0 80px rgba(0, 255, 255, 0.9), 0 0 120px rgba(0, 255, 255, 0.8);
+          }
+        `}</style>
 
       </section>
       {/* ===== Features End ===== */}

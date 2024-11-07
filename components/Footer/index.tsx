@@ -53,8 +53,8 @@ const Footer = () => {
                   contact
                 </p>
                 <a
-                  href="#"
-                  className="text-itemtitle font-medium text-black dark:text-white"
+                  href="mailto:coinearnexchange@proton.me"
+                  className="text-xl font-medium text-black dark:text-white"
                 >
                   coinearnexchange@proton.me
                 </a>
