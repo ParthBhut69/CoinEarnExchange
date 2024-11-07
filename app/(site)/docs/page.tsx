@@ -23,7 +23,7 @@ export default function DocsPage() {
 
             <div className="w-full px-4 lg:w-3/4">
               <div className="blog-details blog-details-docs shadow-three dark:bg-gray-dark rounded-sm bg-white px-8 py-11 sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
-                <h1>Welcome to Startup Documentation</h1>
+                <h1>Welcome to Coin Earn Exchange</h1>
 
                 <p className="text-body-color dark:text-body-color-dark text-base">
                   This document serves as a simple template to showcase a sample
@@ -33,8 +33,8 @@ export default function DocsPage() {
                 <p className="text-body-color dark:text-body-color-dark text-base">
                   Please visit:{" "}
                   <b>
-                    <a href="https://nextjstemplates.com/docs">
-                      nextjstemplates.com/docs
+                    <a href="work">
+                      {/* nextjstemplates.com/docs */}
                     </a>
                   </b>{" "}
                   to check out the real docs, setup guide and even video

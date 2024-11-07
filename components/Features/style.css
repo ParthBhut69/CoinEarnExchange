@@ -20,6 +20,43 @@
     transform: scale(1.1); /* Slightly scale for a thicker border */
   }
 
+  .image-container {
+    position: relative;
+    width: 100%; /* This makes sure the container takes full width */
+  }
+  
+  .image-container img {
+    width: 350px; /* Adjust this value to make the image smaller */
+    height: auto; /* Maintains aspect ratio */
+    position: absolute;
+    opacity: 70;
+    top: 10px; /* Adjust the top margin as needed */
+    right: 100px; /* Moves the image to the right */
+  }
+
+  .left-image-container {
+    position: absolute; /* Allows absolute positioning of the image inside */
+    width: 100%; /* Ensures the container spans the full width */
+  }
+  
+  .left-image-container img {
+    width: 400px; /* Adjust the size of the image */
+    height: auto; /* Maintains aspect ratio of the image */
+    position: absolute; /* Positions the image absolutely inside the container */
+    left: 100px; /* Moves the image 10px from the left edge */
+    bottom: -200px; /* Adjusts the distance from the bottom of the container */
+    animation: float 3s ease-in-out infinite; /* Floating animation */
+  }
+  
+  /* Floating animation keyframes */
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); } /* Moves the image upwards */
+    100% { transform: translateY(0); } /* Moves the image back to the original position */
+  }
+  
+  
+  
   
   /* Background Gradient */
 .feature-background {

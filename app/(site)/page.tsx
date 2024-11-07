@@ -9,10 +9,12 @@ import FeaturesTab from "@/components/FeaturesTab";
 import FunFact from "@/components/FunFact";
 import Integration from "@/components/Integration";
 import CTA from "@/components/CTA";
+// import Platform from "@/components/Platform";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Blog from "@/components/Blog";
 import Testimonial from "@/components/Testimonial";
+// import QuantumAIPlatform from "@/components/Pricing";
 
 
 
@@ -29,13 +31,14 @@ export default function Home() {
       
       <Feature />
       <About />
+      {/* <Platform /> */}
       <FeaturesTab />
       <FunFact />
       <Brands />
       <CTA />
       <FAQ />
       <Testimonial />
-      {/* <Pricing /> */}
+      {/* <QuantumAIPlatform /> */}
       <Contact />
       <Blog />
       <Integration />

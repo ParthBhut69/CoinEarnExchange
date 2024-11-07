@@ -23,12 +23,13 @@ const events = [
   {
     phase: "Phase 3",
     title: "Sniping Bot Release & Staking Program",
-    description: "Splitting of the nucleus.",
+    description: ["1.  Integrate Solana sniping bots, allowing users to activate bots for Solana DEX trading.","2. Begin decentralizing platform governance with a DAO system."
+]
   },
   {
     phase: "Phase 4",
     title: "Global Expansion & Advanced Features",
-    description: "Development of Nuclear Chain Reaction by Enrico Fermi.",
+    description: ["1. Expansion of predictive capabilities to cover additional asset classes like stocks and forex.","2.  Launch premium features for token holders, including early access to new trading algorithms."]
   },
   {
     phase: "Phase 5",

@@ -1,0 +1,16 @@
+.bg-alabaster {
+    background-color: #fafafa; /* Light background */
+  }
+  
+  .bg-black {
+    background-color: #ffffff; /* Dark background */
+  }
+  
+  .bg-alabaster, .bg-black {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  h4 {
+    transition: color 0.3s ease;
+  }
+  

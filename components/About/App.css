@@ -1,46 +1,66 @@
+/* Global Styles */
 body {
     background: linear-gradient(to right, #4e54c8, #8f94fb); /* Blue to Purple gradient */
     font-family: "Montserrat", sans-serif;
     color: #333;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
-
-.timeline {
-    padding: 5em 0;
-}
-
-.subtitle {
-    color: black; /* Set subtitle color to black */
-    font-size: 1.2em; /* Optional: Adjust font size */
-    text-align: center; /* Optional: Center align the text */
-    margin-top: 0.5em; /* Optional: Add margin for spacing */
-}
-
 
 h2, h4 {
     text-align: center;
     color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
+/* Timeline Container */
+.timeline {
+    padding: 5em 0;
+}
+
+/* Subtitle */
+.subtitle {
+    color: black; /* Set subtitle color to black */
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 0.5em;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* Event Item Styles */
 .event-item {
     list-style: none;
-    margin: 2em 0;
+    margin: 3em 0;
     position: relative;
     padding: 1.5em;
     background: rgba(255, 255, 255, 0.9); /* Slightly opaque white */
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    transform: translateY(50px); /* Initial off-screen position for animation */
+    opacity: 0; /* Start as invisible */
+    z-index: 1;
 }
 
-/* Gradient backgrounds for each phase */
+.event-item.inView {
+    transform: translateY(0);
+    opacity: 1;
+    z-index: 2;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow when in view */
+}
+
+/* Gradient Backgrounds for Each Phase */
 .event-item.phase1 {
     background: linear-gradient(to right, #4e54c8, #8f94fb);
 }
 
 .event-item.phase2 {
-    background: linear-gradient(to right, #6a5acd, #b3cde0); /* A lighter blue-purple */
+    background: linear-gradient(to right, #6a5acd, #b3cde0); /* Lighter blue-purple */
 }
 
 .event-item.phase3 {
@@ -55,28 +75,33 @@ h2, h4 {
     background: linear-gradient(to right, #4e54c8, #b3cde0); /* Similar to phase 2 */
 }
 
-.event-item.inView {
-    transform: translateY(0);
-    opacity: 1;
-}
-
+/* Phase Labels */
 .phase {
     font-size: 1.5em;
     font-weight: bold;
-    color: #4e54c8; /* Blue color */
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
+/* Title */
 .title {
-    font-size: 2em;
+    font-size: 2.2em;
     margin: 0.5em 0;
     text-transform: uppercase;
-    color: #8f94fb; /* Light purple color */
+    color: #000000;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* Description */
 .description {
-    margin-top: 0.5em;
+    margin-top: 1em;
     padding: 0;
-    line-height: 1.6;
+    line-height: 1.7;
+    color: #333;
 }
 
 .description li {
@@ -90,27 +115,18 @@ h2, h4 {
     position: absolute;
     left: 0;
     top: 0.6em;
-    width: 0.5em;
-    height: 0.5em;
+    width: 0.6em;
+    height: 0.6em;
     background: #8f94fb; /* Light purple */
     border-radius: 50%;
+    transition: background 0.3s ease;
 }
 
-@media (max-width: 768px) {
-    .event-item {
-        padding: 1.5em;
-    }
-
-    .phase {
-        font-size: 1.2em;
-    }
-
-    .title {
-        font-size: 1.5em;
-    }
+.description li:hover:before {
+    background: #4e54c8; /* Change color on hover */
 }
 
-/* Additional styles for the roadmap effect */
+/* Timeline Line */
 .timeline ul {
     position: relative;
     padding: 0;
@@ -127,6 +143,7 @@ h2, h4 {
     z-index: 0;
 }
 
+/* Event Item Styling */
 .event-item {
     margin-left: calc(50% + 20px); /* Offset for left items */
 }
@@ -135,10 +152,68 @@ h2, h4 {
     margin-left: calc(50% - 20px); /* Offset for right items */
 }
 
-.event-item.left {
-    transform: translateX(-100%);
+/* Hover Effect on Event Item */
+.event-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
+/* Event Item Movement Animation */
+.event-item.left,
+.event-item.right {
+    transform: translateX(-100%); /* Initially off-screen */
 }
 
 .event-item.right {
     transform: translateX(100%);
 }
+
+.event-item.inView.left,
+.event-item.inView.right {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .event-item {
+        padding: 1.2em;
+        width: 100%;
+    }
+
+    .phase {
+        font-size: 1.2em;
+    }
+
+    .title {
+        font-size: 1.5em;
+    }
+
+    .timeline ul::before {
+        left: 10px;
+    }
+
+    /* Adjust event item alignment */
+    .event-item {
+        margin-left: 0;
+        margin-right: 0;
+        width: 90%;
+    }
+
+    .event-item.right {
+        margin-left: 0;
+    }
+}
+
+/* Final touches for animation on scroll */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+    

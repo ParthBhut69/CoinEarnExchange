@@ -7,9 +7,9 @@ const Integration = () => {
   const brands = [
     { src: "./images/brand/youtube.svg", alt: "YouTube", link: "https://www.youtube.com" },
     { src: "./images/brand/linkedin.svg", alt: "LinkedIn", link: "https://www.linkedin.com" },
-    { src: "./images/brand/facebook.svg", alt: "Facebook", link: "https://www.facebook.com" },
+    { src: "./images/brand/facebook.svg", alt: "Facebook", link: "https://www.facebook.com/people/Coin-EarnExchange/pfbid0jwmrurC3FBE7FcPEsE3F1tSLpwbDoArYKM26wn6L2sWCEUzNg6xvUvxRrKfvxLeul/?mibextid=rS40aB7S9Ucbxw6v" },
     { src: "./images/brand/brand-10.svg", alt: "Brand 10", link: "#" }, // Add a valid link
-    { src: "./images/brand/instagram.svg", alt: "Instagram", link: "https://www.instagram.com" },
+    { src: "./images/brand/instagram.svg", alt: "Instagram", link: "https://www.instagram.com/coinearnexchange" },
     { src: "./images/brand/telegram.svg", alt: "Telegram", link: "https://telegram.org" }
   ];
 
@@ -19,8 +19,8 @@ const Integration = () => {
         <SectionHeader
           headerInfo={{
             title: `INTEGRATIONS`,
-            subtitle: `Remotely Maintain Your Data, From Anywhere, Anytime.`,
-            description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`,
+            subtitle: `Follow Us`,
+            description: `Stay updated with the latest news and updates from Coin Earn Exchange by following us on social media. Join our community and be part of the conversation!`,
           }}
         />
       </div>

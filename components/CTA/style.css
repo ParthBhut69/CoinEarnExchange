@@ -1,0 +1,24 @@
+@media (max-width: 768px) {
+    .flex-col-reverse {
+      flex-direction: column; /* Stack elements in reverse order on mobile */
+      align-items: center; /* Center items horizontally */
+    }
+  
+    /* Additional styling for mobile */
+    .cta-container {
+      padding: 20px; /* Add padding for mobile */
+    }
+  
+    .cta-image {
+      width: 100%; /* Ensure image is responsive */
+      height: auto; /* Maintain aspect ratio */
+      margin-bottom: 20px; /* Add spacing below the image */
+    }
+  
+    .cta-button {
+      width: 100%; /* Full width button on mobile */
+      text-align: center; /* Center text in button */
+      margin-top: 10px; /* Space above the button */
+    }
+  }
+  

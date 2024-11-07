@@ -19,8 +19,8 @@ const brandData: Brand[] = [
     id: 0.4,
     name: "Client",
     href: "#",
-    image: "/images/brand/Binance-Logo.svg",
-    imageLight: "/images/brand/solana.svg",
+    image: "/images/brand/Uniswap.svg",
+    imageLight: "/images/brand/uniswap1.png",
   },
   {
     id: 0.5,
