@@ -11,7 +11,7 @@ const featuresData: Feature[] = [
   {
     id: 2,
     icon: "/images/icon/icon-02.svg",
-    title: "User Deposists and trading Expert",
+    title: "User Deposit and trading Expert",
     description:
       "Expert insights on user deposits and trading strategies.",
   },
