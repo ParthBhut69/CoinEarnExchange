@@ -49,15 +49,14 @@ const Footer = () => {
                   Together We Earn.
                 </p>
 
-                <p className="mb-1.5 text-sectiontitle uppercase tracking-[5px]">
-                  contact
-                </p>
-                <a
-                  href="mailto:coinearnexchange@proton.me"
-                  className="text-xl font-medium text-black dark:text-white"
-                >
-                  coinearnexchange@proton.me
-                </a>
+                <p className="text-itemtitle2 uppercase font-medium text-black dark:text-white">
+                    contact
+                  </p>
+
+                <a href="mailto:coinearnexchange@proton.me"
+                    className="text-lg font-medium text-black dark:text-white">
+                    coinearnexchange@proton.me
+                 </a>
               </motion.div>
 
               <div className="flex w-full flex-col gap-8 md:flex-row md:justify-between md:gap-0 lg:w-2/3 xl:w-7/12">
